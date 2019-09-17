@@ -1,0 +1,525 @@
+// fonts
+$font-header: Montserrat, helvetica;
+$font-nav: "Space Mono", monospace;
+// colors
+$color-dark: #111;
+$color-border: #ccc;
+$color-trans-bg: #ededed;
+// easings
+$ease-cb: cubic-bezier(0.4, 0, 0.2, 1);
+$ease-cb-2: cubic-bezier(0.19, 1, 0.22, 1);
+$ease-cb-3: cubic-bezier(0.77, 0, 0.175, 1);
+$ease-cb-4: cubic-bezier(0.99, 1, 0.92, 1);
+// padding
+$pad: 3em;
+// mqs
+$mq-med: 54em;
+$mq-large: 65em;
+$mq-xlarge: 91em;
+
+//------------------------------
+//  nth-trans-delay()
+//  Transition Delay on nth-childs
+//  @param: $delay_items: number of nth-of-type items to create
+//  @param: $delay_time: transition-dealy value
+//-----------------------------
+@mixin nth-trans-delay($delay_items: 7, $delay_time: 0.2s) {
+  @for $i from 1 through $delay_items {
+    &:nth-child(#{$i}) {
+      transition-delay: $delay_time * $i;
+    }
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+//-------------------------------
+//  Body, prevent scrolling
+//-------------------------------
+body {
+  height: 100%;
+  //   overflow-y: hidden;
+}
+
+//-------------------------------
+//  Slides Nav
+//-------------------------------
+.social__icon {
+  transform: rotate(-90deg);
+  position: absolute;
+  left: 150%;
+}
+
+.slides-nav {
+  z-index: 99;
+  position: absolute;
+  // Grimey, not sure why
+  // 0 isn't working
+  right: -5%;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  color: #111;
+
+  @media (min-width: $mq-med) {
+    right: 2%;
+  }
+
+  &__nav {
+    position: relative;
+    right: 0;
+    display: block;
+    font-size: 1em;
+    transform: rotate(90deg);
+    transform-origin: center;
+  }
+
+  button {
+    position: relative;
+    display: inline-block;
+    padding: 0.35em;
+    margin: 0;
+    font-family: $font-nav;
+    appearance: none;
+    background: transparent;
+    border: 0;
+    overflow-x: hidden;
+    transition: color 0.5s ease;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      height: 1px;
+      width: 0;
+      background: $color-dark;
+      transition: width 0.4s ease;
+    }
+    &:hover {
+      cursor: pointer;
+      color: rgba($color-dark, 0.75);
+      transition: color 0.5s ease;
+    }
+    &:hover:after {
+      width: 100%;
+      transition: width 0.4s ease;
+    }
+    // Yeah... I know
+    &:focus {
+      outline: 0;
+    }
+  }
+  // If is Sliding, prevent
+  // double clicks
+  .is-sliding & {
+    pointer-events: none;
+  }
+}
+
+//-------------------------------
+//  Slides
+//-------------------------------
+.slides {
+  position: relative;
+  display: block;
+  height: 100vh;
+  width: 100%;
+  background: #fff;
+  transition: background 1s $ease-cb-4;
+
+  .is-sliding & {
+    background: $color-trans-bg;
+    transition: background 0.3s $ease-cb-4;
+  }
+}
+
+//-------------------------------
+//  Single Slide
+//-------------------------------
+$slide-content-size-sm: 95%;
+$slide-content-size: 80%;
+
+.slide {
+  z-index: -1;
+  padding: 0;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  transition: z-index 1s ease;
+
+  // Bring active layer to foreground
+  &.is-active {
+    z-index: 19;
+    transition: z-index 1s ease;
+  }
+
+  &__content {
+    position: relative;
+    margin: 0 auto;
+    height: $slide-content-size-sm;
+    width: $slide-content-size-sm;
+    top: (100% - $slide-content-size-sm) / 2;
+
+    @media (min-width: $mq-med) {
+      height: $slide-content-size;
+      width: $slide-content-size;
+      top: (100% - $slide-content-size) / 2;
+    }
+  }
+
+  &__header {
+    z-index: 9;
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    overflow-y: hidden;
+    transform: translateX(5%);
+
+    @media (min-width: $mq-med) {
+      transform: translateX(-5%);
+    }
+  }
+
+  &__title {
+    font-family: $font-header;
+    font-size: 2.5em;
+    font-weight: 700;
+    color: $color-dark;
+    overflow-y: hidden;
+
+    @media (min-width: $mq-med) {
+      font-size: 5em;
+    }
+
+    // Slice text animation
+    .title-line {
+      display: block;
+      overflow-y: hidden;
+
+      span {
+        display: inline-block;
+        transform: translate3d(0, 140%, 0);
+        opacity: 0;
+        transition: transform 0.4s ease, opacity 0.8s ease;
+        @include nth-trans-delay(2, 0.15s);
+      }
+
+      .is-active & span {
+        transform: translate3d(0, 0%, 0);
+        opacity: 1;
+        transition: transform 0.6s $ease-cb-3, opacity 0.1s ease;
+      }
+      .is-active &:nth-of-type(2n) span {
+        transition-delay: 0.2s;
+      }
+    }
+  }
+
+  // Image wrapper
+  &__figure {
+    z-index: 7;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+    //overflow-y: hidden;
+    transition: transform 0.5s $ease-cb-2;
+
+    // Scale Image
+    .is-sliding & {
+      transform: scale(0.8);
+      transition: transform 0.5s $ease-cb-2;
+    }
+  }
+  &__img {
+    position: relative;
+    display: block;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 50%;
+    -webkit-backface-visibility: hidden;
+    //will-change:height;
+    height: 0%;
+    width: 100%;
+    filter: grayscale(0%);
+    transition: height 1s 1.4s $ease-cb-2, filter 0.4s 0.1s ease;
+
+    .is-active & {
+      height: 100%;
+      opacity: 1;
+      transition: height 0.5s 0.3s $ease-cb-3, filter 0.4s 0.1s ease;
+    }
+    .is-sliding & {
+      filter: grayscale(100%);
+    }
+  }
+}
+
+//-------------------------------
+//  Services section
+//-------------------------------
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+}
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  outline: none;
+}
+
+a,
+a:active,
+a:focus {
+  color: #333;
+  text-decoration: none;
+  transition-timing-function: ease-in-out;
+  -ms-transition-timing-function: ease-in-out;
+  -moz-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  transition-duration: 0.2s;
+  -ms-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+span,
+a,
+a:hover {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+.section-head {
+  margin-bottom: 60px;
+}
+.section-head h4 {
+  position: relative;
+  padding: 0;
+  color: #f91942;
+  line-height: 1;
+  letter-spacing: 0.3px;
+  font-size: 34px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: none;
+  margin-bottom: 30px;
+}
+.section-head h4:before {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background: #f91942;
+  position: absolute;
+  left: 0px;
+  bottom: -10px;
+  right: 0;
+  margin: 0 auto;
+}
+.section-head h4 span {
+  font-weight: 700;
+  padding-bottom: 5px;
+  color: #2f2f2f;
+}
+p.service_text {
+  color: #cccccc !important;
+  font-size: 16px;
+  line-height: 28px;
+  text-align: center;
+}
+.section-head p,
+p.awesome_line {
+  color: #818181;
+  font-size: 16px;
+  line-height: 28px;
+  text-align: center;
+}
+
+.extra-text {
+  font-size: 34px;
+  font-weight: 700;
+  color: #2f2f2f;
+  margin-bottom: 25px;
+  position: relative;
+  text-transform: none;
+}
+.extra-text::before {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background: #f91942;
+  position: absolute;
+  left: 0px;
+  bottom: -10px;
+  right: 0;
+  margin: 0 auto;
+}
+.extra-text span {
+  font-weight: 700;
+  color: #f91942;
+}
+.item {
+  height: 20rem;
+  background: #fff;
+  text-align: center;
+  padding: 30px 25px;
+  -webkit-box-shadow: 0 0px 25px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 0px 25px rgba(0, 0, 0, 0.07);
+  border-radius: 20px;
+  border: 5px solid rgba(0, 0, 0, 0.07);
+  margin-bottom: 30px;
+  -webkit-transition: all 0.5s ease 0;
+  transition: all 0.5s ease 0;
+  transition: all 0.5s ease 0s;
+}
+.item:hover {
+  background: #f91942;
+  box-shadow: 0 8px 20px 0px rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 0.5s ease 0;
+  transition: all 0.5s ease 0;
+  transition: all 0.5s ease 0s;
+}
+.item:hover .item,
+.item:hover span.icon {
+  background: #fff;
+  border-radius: 10px;
+  -webkit-transition: all 0.5s ease 0;
+  transition: all 0.5s ease 0;
+  transition: all 0.5s ease 0s;
+}
+.item:hover h6,
+.item:hover p {
+  color: #fff;
+  -webkit-transition: all 0.5s ease 0;
+  transition: all 0.5s ease 0;
+  transition: all 0.5s ease 0s;
+}
+.item .icon {
+  font-size: 40px;
+  margin-bottom: 25px;
+  color: #f91942;
+  width: 90px;
+  height: 90px;
+  line-height: 96px;
+  border-radius: 50px;
+}
+.item .feature_box_col_one {
+  background: rgba(247, 198, 5, 0.2);
+  color: #f91942;
+}
+.item .feature_box_col_two {
+  background: rgba(255, 77, 28, 0.15);
+  color: #f91942;
+}
+.item .feature_box_col_three {
+  background: rgba(0, 147, 38, 0.15);
+  color: #f91942;
+}
+.item .feature_box_col_four {
+  background: rgba(0, 108, 255, 0.15);
+  color: #f91942;
+}
+.item .feature_box_col_five {
+  background: rgba(146, 39, 255, 0.15);
+  color: #f91942;
+}
+.item .feature_box_col_six {
+  background: rgba(23, 39, 246, 0.15);
+  color: #f91942;
+}
+.item p {
+  font-size: 15px;
+  line-height: 26px;
+}
+.item h6 {
+  margin-bottom: 20px;
+  color: #2f2f2f;
+}
+.mission p {
+  margin-bottom: 10px;
+  font-size: 15px;
+  line-height: 28px;
+  font-weight: 500;
+}
+.mission i {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background: #f91942;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 25px;
+}
+.mission .small-text {
+  margin-left: 10px;
+  font-size: 13px;
+  color: #666;
+}
+.skills {
+  padding-top: 0px;
+}
+.skills .prog-item {
+  margin-bottom: 25px;
+}
+.skills .prog-item:last-child {
+  margin-bottom: 0;
+}
+.skills .prog-item p {
+  font-weight: 500;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+.skills .prog-item .skills-progress {
+  width: 100%;
+  height: 10px;
+  background: #e0e0e0;
+  border-radius: 20px;
+  position: relative;
+}
+.skills .prog-item .skills-progress span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: #f91942;
+  width: 10%;
+  border-radius: 10px;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+.skills .prog-item .skills-progress span:after {
+  content: attr(data-value);
+  position: absolute;
+  top: -5px;
+  right: 0;
+  font-size: 10px;
+  font-weight: 600;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.9);
+  padding: 3px 7px;
+  border-radius: 30px;
+}
