@@ -1,0 +1,25 @@
+.mobile-navigation {
+  &__list {
+    margin-top: 0;
+    text-align: center;
+    transition: ease-in-out 0.5s;
+  }
+  &__item a {
+    display: block;
+    padding: 1.3rem;
+    &:hover {
+      background-color: #999999;
+    }
+  }
+}
+.mob_dropdown {
+  transform: translateY(-100rem);
+}
+/* Larger than tablet */
+@media (min-width: 750px) {
+  .mobile-navigation {
+    &__list {
+      display: none;
+    }
+  }
+}
