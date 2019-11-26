@@ -41,6 +41,36 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+.heading-primary {
+  color: #ffffff;
+  text-transform: uppercase;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  margin-bottom: 6rem;
+}
+
+.heading-primary--main {
+  display: block;
+  font-size: 4rem;
+  font-weight: 400;
+  letter-spacing: 1rem;
+}
+
+.heading-primary--sub {
+  display: block;
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: 1rem;
+}
+
+.heading-primary--sub__sub {
+  display: block;
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: 1rem;
+  color: yellow;
+}
+
 /* Mobile first queries */
 .navigation__nav {
   background-color: rgba(0, 0, 0, 0.4) !important;
@@ -68,7 +98,7 @@ body {
     display: none !important;
   }
   .neema-logo {
-    margin: 0rem 2rem;
+    margin: 0.5rem 2rem;
   }
 }
 
@@ -79,7 +109,41 @@ body {
   position: relative;
   z-index: -10;
   width: 100%;
-  background-image: url("../../img/DoctorLandingPage.jfif");
+  background-image: url("https://wallpaperplay.com/walls/full/3/5/5/176847.jpg");
   background-size: cover;
+}
+
+.header__text-box {
+  position: absolute;
+  width: 80%;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.services {
+  height: 100vh;
+  padding: 5rem 0px;
+}
+
+.services-card {
+  height: 18rem;
+}
+
+.services-primary--sub {
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+}
+
+.services-content {
+  letter-spacing: 0.08rem;
+}
+
+.more-info {
+  height: 60vh;
+  padding: 20px;
 }
 /*# sourceMappingURL=main.css.map */
