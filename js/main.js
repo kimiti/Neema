@@ -1,6 +1,9 @@
-$(document).ready(function() {
-  //Navigation script
-  $("#mobile-toggle").click(function() {
-    $(".mobile_dropdown").toggleClass("mob_dropdown");
-  });
+$(".carousel.carousel-slider").carousel({
+  fullWidth: true
 });
+
+autoplay();
+function autoplay() {
+  $(".carousel").carousel("next");
+  setTimeout(autoplay, 4500);
+}

@@ -1,149 +1,106 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
-.mobile-navigation__list {
-  margin-top: 0;
-  text-align: center;
-  -webkit-transition: ease-in-out 0.5s;
-  transition: ease-in-out 0.5s;
-}
-
-.mobile-navigation__item a {
-  display: block;
-  padding: 1.3rem;
-}
-
-.mobile-navigation__item a:hover {
-  background-color: #999999;
-}
-
-.mob_dropdown {
-  -webkit-transform: translateY(-100rem);
-          transform: translateY(-100rem);
-}
-
-/* Larger than tablet */
-@media (min-width: 750px) {
-  .mobile-navigation__list {
-    display: none;
+@media screen and (max-width: 700px) {
+  .navigation__menus {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 0 10px;
+  }
+  .navigation__logo {
+    margin: 1rem 1rem;
+  }
+  .navigation__logo img {
+    height: 40px;
+  }
+  .navigation__mobile_nav {
+    display: block !important;
+  }
+  .navigation__link_mobile {
+    display: inline-block;
+    padding: 10px 0px;
+    width: 100%;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  .navigation__link_mobile hr {
+    opacity: 0.2;
+  }
+  .navigation__link_mobile:hover {
+    -webkit-animation: menumove 0.5s linear;
+            animation: menumove 0.5s linear;
+  }
+  .navigation__link-mobile_btn {
+    position: absolute;
+    right: 1.5rem;
+    top: 1rem;
+    font-size: 1.5rem;
+  }
+  .more_about {
+    text-align: center;
   }
 }
 
-.social__links {
-  position: absolute;
-  top: 25rem;
-  left: 2rem;
+@-webkit-keyframes menumove {
+  0% {
+    -webkit-transform: translateY(-0.5rem);
+            transform: translateY(-0.5rem);
+  }
+  100% {
+    -webkit-transform: translateY(0rem);
+            transform: translateY(0rem);
+  }
 }
 
-.social__items {
-  padding: 0.5rem;
+@keyframes menumove {
+  0% {
+    -webkit-transform: translateY(-0.5rem);
+            transform: translateY(-0.5rem);
+  }
+  100% {
+    -webkit-transform: translateY(0rem);
+            transform: translateY(0rem);
+  }
 }
 
-body {
-  font-family: "Roboto", sans-serif;
+.navigation__logo {
+  margin: 0.5rem 1rem;
 }
 
-.heading-primary {
-  color: #ffffff;
-  text-transform: uppercase;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  margin-bottom: 6rem;
+.navigation__logo img {
+  height: 50px;
 }
 
-.heading-primary--main {
-  display: block;
-  font-size: 4rem;
-  font-weight: 400;
-  letter-spacing: 1rem;
-}
-
-.heading-primary--sub {
-  display: block;
-  font-size: 1.9rem;
-  font-weight: 700;
-  letter-spacing: 1rem;
-}
-
-.heading-primary--sub__sub {
-  display: block;
-  font-size: 1.9rem;
-  font-weight: 700;
-  letter-spacing: 1rem;
-  color: yellow;
-}
-
-/* Mobile first queries */
-.navigation__nav {
-  background-color: rgba(0, 0, 0, 0.4) !important;
-  position: fixed;
-}
-
-.navigation__list {
+.navigation__mobile_nav {
   display: none;
 }
 
-.navigation__mobile {
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
-}
-
-/* Larger than mobile */
-/* Larger than phablet */
-/* Larger than tablet */
-@media (min-width: 750px) {
-  .navigation__list {
-    display: block;
-  }
-  .navigation__mobile {
-    display: none !important;
-  }
-  .neema-logo {
-    margin: 0.5rem 2rem;
-  }
-}
-
-/* Larger than desktop */
-/* Larger than Desktop HD */
-.header {
-  height: 100vh;
-  position: relative;
-  z-index: -10;
-  width: 100%;
-  background-image: url("https://wallpaperplay.com/walls/full/3/5/5/176847.jpg");
-  background-size: cover;
-}
-
-.header__text-box {
-  position: absolute;
-  width: 80%;
-  z-index: 10;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  text-align: center;
+.header-slider {
+  background-image: url("");
+  background-size: contain;
 }
 
 .services {
-  height: 100vh;
-  padding: 5rem 0px;
+  height: 70vh;
+  margin-top: 1rem;
 }
 
-.services-card {
-  height: 18rem;
+.services img {
+  height: 100px;
 }
 
-.services-primary--sub {
-  font-size: 1.5rem;
-  letter-spacing: 0.1rem;
+.services .card {
+  text-align: center;
+  height: 20rem;
+  padding: 10px 0;
 }
 
-.services-content {
-  letter-spacing: 0.08rem;
-}
-
-.more-info {
+.more_about {
   height: 60vh;
-  padding: 20px;
+}
+
+.more_about img {
+  height: 20rem;
 }
 /*# sourceMappingURL=main.css.map */

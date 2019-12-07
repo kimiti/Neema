@@ -1,45 +1,12 @@
-/* Mobile first queries */
 .navigation {
-  &__nav {
-    background-color: rgba($color: #000000, $alpha: 0.4) !important;
-    position: fixed;
+  &__logo {
+    margin: 0.5rem 1rem;
+
+    img {
+      height: 50px;
+    }
   }
-  &__list {
+  &__mobile_nav {
     display: none;
   }
-  &__mobile {
-    position: absolute;
-    right: 1rem;
-    top: 1rem;
-  }
-}
-/* Larger than mobile */
-@media (min-width: 400px) {
-}
-
-/* Larger than phablet */
-@media (min-width: 550px) {
-}
-
-/* Larger than tablet */
-@media (min-width: 750px) {
-  .navigation {
-    &__list {
-      display: block;
-    }
-    &__mobile {
-      display: none !important;
-    }
-  }
-  .neema-logo {
-    margin: 0.5rem 2rem;
-  }
-}
-
-/* Larger than desktop */
-@media (min-width: 1000px) {
-}
-
-/* Larger than Desktop HD */
-@media (min-width: 1200px) {
 }

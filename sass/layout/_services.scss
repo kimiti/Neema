@@ -1,18 +1,18 @@
 .services {
-  height: 100vh;
-  padding: 5rem 0px;
+  height: 70vh;
+  margin-top: 1rem;
+  img {
+    height: 100px;
+  }
 }
-.services-card {
-  height: 18rem;
+.services .card {
+  text-align: center;
+  height: 20rem;
+  padding: 10px 0;
 }
-.services-primary--sub {
-  font-size: 1.5rem;
-  letter-spacing: 0.1rem;
-}
-.services-content {
-  letter-spacing: 0.08rem;
-}
-.more-info {
+.more_about {
   height: 60vh;
-  padding: 20px;
+  img {
+    height: 20rem;
+  }
 }
