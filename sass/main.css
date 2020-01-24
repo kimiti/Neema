@@ -23,13 +23,6 @@
     -webkit-transition: 0.5s;
     transition: 0.5s;
   }
-  .navigation__link_mobile hr {
-    opacity: 0.2;
-  }
-  .navigation__link_mobile:hover {
-    -webkit-animation: menumove 0.5s linear;
-            animation: menumove 0.5s linear;
-  }
   .navigation__link-mobile_btn {
     position: absolute;
     right: 1.5rem;
@@ -38,6 +31,19 @@
   }
   .more_about {
     text-align: center;
+  }
+  .hospital_image {
+    margin-top: 100px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .navigation__menus {
+    display: block;
+    text-align: center;
+  }
+  .navigation__link_mobile {
+    padding: 5px 0;
   }
 }
 
@@ -106,5 +112,9 @@
 
 .more_about img {
   height: 20rem;
+}
+
+.hospital_image {
+  margin-top: 50px;
 }
 /*# sourceMappingURL=main.css.map */

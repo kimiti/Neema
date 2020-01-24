@@ -19,11 +19,8 @@
       display: inline-block;
       margin: 0 15px;
       transition: 0.5s;
-      hr {
-        opacity: 0.2;
-      }
+
       &:hover {
-        animation: menumove 0.5s linear;
       }
     }
     &__link-mobile_btn {
@@ -35,5 +32,20 @@
   }
   .more_about {
     text-align: center;
+  }
+  .hospital_image {
+    margin-top: 100px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .navigation {
+    &__menus {
+      display: block;
+      text-align: center;
+    }
+    &__link_mobile {
+      padding: 5px 0;
+    }
   }
 }
