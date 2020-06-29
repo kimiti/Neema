@@ -1,0 +1,166 @@
+/* start navigation */
+.nav-logo {
+  height: 4rem;
+}
+.header_area .main-menu .navbar .navbar-brand {
+  padding: 0 2rem 0 5rem;
+}
+
+.header_area .main-menu .navbar {
+  padding: 1rem 20rem;
+}
+
+.header_area .main-menu .nav-item .nav-link {
+  text-transform: uppercase;
+  padding: 1.7rem;
+  color: $title-color;
+}
+
+.header_area .main-menu .navbar-nav .active a {
+  background: $gradient-color;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.header_area .main-menu .navbar-nav a:hover {
+  background: $gradient-color;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* end navigation */
+
+/* Banner Area */
+.site-banner {
+  color: #000000;
+  background: url("../../img/depositphotos_8206250-stock-photo-white-empty-padded-room.jpg")
+    no-repeat;
+  background-size: 100% 100%;
+}
+.site-main .site-banner {
+  height: 100vh;
+}
+.site-main .site-banner .site-title {
+  padding: 15% 10%;
+  font-weight: 500;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.site-main .site-banner .site-title h1 {
+  background: rgba(255, 255, 255, 0.3);
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  width: 50%;
+  border-radius: 5px;
+}
+
+.site-main .site-banner .site-title h3 {
+  background: rgba(255, 255, 255, 0.3);
+
+  border-radius: 5px;
+  padding: 10px 0;
+  width: 50%;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+
+/* End Banner Area */
+
+/* Services Area */
+
+.service-img img {
+  margin-bottom: 3rem;
+  border-radius: 5px;
+  box-shadow: 0 1.5rem 4rem rgba(#000000, 0.2);
+  height: 10rem;
+  width: 15rem;
+}
+.services-title {
+  padding: 5rem 0;
+}
+.webcoderskull-item p {
+  font-size: 1.1rem;
+  line-height: 2rem;
+  font-weight: 100;
+  letter-spacing: 2px;
+}
+
+.webcoderskull-item {
+  height: 35rem;
+  text-align: center;
+  border: 1px solid #6a78dc;
+  margin-bottom: 45px;
+  padding: 35px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 1px 3px rgba(114, 120, 220, 0.12),
+    0 1px 2px rgba(114, 120, 220, 0.24);
+}
+
+.webcoderskull-item:hover {
+  box-shadow: 0 14px 28px rgba(114, 120, 220, 0.25),
+    0 10px 10px rgba(114, 120, 220, 0.22);
+}
+
+/* enf of Services Area */
+
+.about-wrapper p {
+  margin: 2rem 0;
+  box-shadow: 0 0.1rem 8rem rgba(#000000, 0.2);
+  border-left: solid $primary-color 1rem;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 1.1rem;
+  line-height: 2rem;
+  font-weight: 100;
+  letter-spacing: 2px;
+  background-color: #ecf0f1;
+}
+.splitter {
+  height: 5rem;
+  width: 100%;
+}
+.brand-wrapper {
+  margin: 20px 0;
+  padding: 20px;
+}
+.brand-wrapper p {
+  letter-spacing: 2px;
+  font-weight: 100;
+  font-size: 1.2rem;
+}
+.brand-icon {
+  color: #f39c12;
+}
+
+.footer-wrapper {
+  background-color: #30336b;
+  color: #ffffff;
+}
+
+.footer-wrapper li {
+  margin: 1rem 0;
+}
+.footer-copyright-text {
+  background-color: #130f40;
+}
+.brand-img {
+  float: left;
+  padding: 20px;
+}
+
+.brand-img img {
+  border-radius: 5px;
+  box-shadow: 0 1.5rem 4rem rgba(#000000, 0.2);
+  height: 10rem;
+  width: 15rem;
+}
+.brand-project-text {
+  padding: 30px 0;
+  line-height: 30px;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  font-weight: 100;
+}

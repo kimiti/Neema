@@ -1,120 +1,252 @@
-@media screen and (max-width: 992px) {
-  .navigation__menus {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    padding: 0 10px;
-  }
-  .navigation__logo {
-    margin: 1rem 1rem;
-  }
-  .navigation__logo img {
-    height: 40px;
-  }
-  .navigation__mobile_nav {
-    display: block !important;
-  }
-  .navigation__link_mobile {
-    display: inline-block;
-    margin: 0 15px;
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
-  }
-  .navigation__link-mobile_btn {
-    position: absolute;
-    right: 1.5rem;
-    top: 1rem;
-    font-size: 1.5rem;
-  }
-  .more_about {
-    text-align: center;
-  }
-  .hospital_image {
-    margin-top: 100px;
-  }
+/* font family variables. */
+html,
+body {
+  margin: 0%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
 }
 
-@media screen and (max-width: 550px) {
-  .navigation__menus {
-    display: block;
-    text-align: center;
-  }
-  .navigation__link_mobile {
-    padding: 5px 0;
-  }
+a {
+  text-decoration: none;
 }
 
-@-webkit-keyframes menumove {
-  0% {
-    -webkit-transform: translateY(-0.5rem);
-            transform: translateY(-0.5rem);
-  }
-  100% {
-    -webkit-transform: translateY(0rem);
-            transform: translateY(0rem);
-  }
+li {
+  text-decoration: none;
 }
 
-@keyframes menumove {
-  0% {
-    -webkit-transform: translateY(-0.5rem);
-            transform: translateY(-0.5rem);
-  }
-  100% {
-    -webkit-transform: translateY(0rem);
-            transform: translateY(0rem);
-  }
+ul {
+  list-style-type: none;
 }
 
-.navigation__link_last {
-  margin-right: 2rem;
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-.navigation__logo {
-  margin: 0.5rem 1rem;
+/* start navigation */
+.nav-logo {
+  height: 4rem;
 }
 
-.navigation__logo img {
-  height: 50px;
+.header_area .main-menu .navbar .navbar-brand {
+  padding: 0 2rem 0 5rem;
 }
 
-.navigation__mobile_nav {
-  display: none;
+.header_area .main-menu .navbar {
+  padding: 1rem 20rem;
 }
 
-.header-slider {
-  background-image: url("");
-  background-size: contain;
+.header_area .main-menu .nav-item .nav-link {
+  text-transform: uppercase;
+  padding: 1.7rem;
+  color: #141313;
 }
 
-.services {
-  height: 70vh;
-  margin-top: 1rem;
+.header_area .main-menu .navbar-nav .active a {
+  background: -webkit-gradient(linear, left top, right top, from(#4458dc), to(#854fee));
+  background: linear-gradient(90deg, #4458dc 0%, #854fee 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.services img {
-  height: 100px;
+.header_area .main-menu .navbar-nav a:hover {
+  background: -webkit-gradient(linear, left top, right top, from(#4458dc), to(#854fee));
+  background: linear-gradient(90deg, #4458dc 0%, #854fee 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.services .card {
-  text-align: center;
-  height: 20rem;
+/* end navigation */
+/* Banner Area */
+.site-banner {
+  color: #000000;
+  background: url("../../img/depositphotos_8206250-stock-photo-white-empty-padded-room.jpg") no-repeat;
+  background-size: 100% 100%;
+}
+
+.site-main .site-banner {
+  height: 100vh;
+}
+
+.site-main .site-banner .site-title {
+  padding: 15% 10%;
+  font-weight: 500;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.site-main .site-banner .site-title h1 {
+  background: rgba(255, 255, 255, 0.3);
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  width: 50%;
+  border-radius: 5px;
+}
+
+.site-main .site-banner .site-title h3 {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
   padding: 10px 0;
+  width: 50%;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
 }
 
-.more_about {
-  margin-top: 2rem;
-  height: 60vh;
+/* End Banner Area */
+/* Services Area */
+.service-img img {
+  margin-bottom: 3rem;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+  height: 10rem;
+  width: 15rem;
 }
 
-.more_about img {
-  height: 20rem;
+.services-title {
+  padding: 5rem 0;
 }
 
-.hospital_image {
-  margin-top: 50px;
+.webcoderskull-item p {
+  font-size: 1.1rem;
+  line-height: 2rem;
+  font-weight: 100;
+  letter-spacing: 2px;
+}
+
+.webcoderskull-item {
+  height: 35rem;
+  text-align: center;
+  border: 1px solid #6a78dc;
+  margin-bottom: 45px;
+  padding: 35px;
+  -webkit-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  -webkit-box-shadow: 0 1px 3px rgba(114, 120, 220, 0.12), 0 1px 2px rgba(114, 120, 220, 0.24);
+          box-shadow: 0 1px 3px rgba(114, 120, 220, 0.12), 0 1px 2px rgba(114, 120, 220, 0.24);
+}
+
+.webcoderskull-item:hover {
+  -webkit-box-shadow: 0 14px 28px rgba(114, 120, 220, 0.25), 0 10px 10px rgba(114, 120, 220, 0.22);
+          box-shadow: 0 14px 28px rgba(114, 120, 220, 0.25), 0 10px 10px rgba(114, 120, 220, 0.22);
+}
+
+/* enf of Services Area */
+.about-wrapper p {
+  margin: 2rem 0;
+  -webkit-box-shadow: 0 0.1rem 8rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0.1rem 8rem rgba(0, 0, 0, 0.2);
+  border-left: solid #4458dc 1rem;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 1.1rem;
+  line-height: 2rem;
+  font-weight: 100;
+  letter-spacing: 2px;
+  background-color: #ecf0f1;
+}
+
+.splitter {
+  height: 5rem;
+  width: 100%;
+}
+
+.brand-wrapper {
+  margin: 20px 0;
+  padding: 20px;
+}
+
+.brand-wrapper p {
+  letter-spacing: 2px;
+  font-weight: 100;
+  font-size: 1.2rem;
+}
+
+.brand-icon {
+  color: #f39c12;
+}
+
+.footer-wrapper {
+  background-color: #30336b;
+  color: #ffffff;
+}
+
+.footer-wrapper li {
+  margin: 1rem 0;
+}
+
+.footer-copyright-text {
+  background-color: #130f40;
+}
+
+.brand-img {
+  float: left;
+  padding: 20px;
+}
+
+.brand-img img {
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+  height: 10rem;
+  width: 15rem;
+}
+
+.brand-project-text {
+  padding: 30px 0;
+  line-height: 30px;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  font-weight: 100;
+}
+
+.about-site-banner {
+  height: 90vh;
+  background: url("../../img/hospital-hd-wallpaper.jpg") no-repeat;
+  background-size: 100% 100%;
+}
+
+.about-title-wrapper {
+  padding: 20% 10%;
+}
+
+.about-project {
+  margin-bottom: 2rem;
+}
+
+.about-title-text {
+  background: rgba(255, 255, 255, 0.3);
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  width: 60%;
+  border-radius: 5px;
+}
+
+.board-profile-pic img {
+  padding: 20px;
+  border-radius: 50%;
+  float: left;
+  height: 6rem;
+}
+
+.pic-text h3 {
+  font-size: 1.3rem;
+}
+
+.pic-text {
+  line-height: 30px;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  font-weight: 100;
+}
+
+.about-slit {
+  height: 10rem;
 }
 /*# sourceMappingURL=main.css.map */
